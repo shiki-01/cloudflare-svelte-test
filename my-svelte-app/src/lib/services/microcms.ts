@@ -1,9 +1,10 @@
-declare const MICROCMS_SERVICE_DOMAIN: string;
-declare const MICROCMS_API_KEY: string;
 import { createClient, type MicroCMSQueries } from "microcms-js-sdk";
 import blogsDetail from "$lib/assets/mocks/blogs-detail.json";
 import blogsList from "$lib/assets/mocks/blogs-list.json";
 import type { EndPoints } from "$lib/types/microcms";
+
+const MICROCMS_SERVICE_DOMAIN = import.meta.env.VITE_MICROCMS_SERVICE_DOMAIN;
+const MICROCMS_API_KEY = import.meta.env.VITE_MICROCMS_API_KEY;
 
 export const microcms = createClient({
   serviceDomain: MICROCMS_SERVICE_DOMAIN,
