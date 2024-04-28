@@ -1,12 +1,13 @@
+declare const MICROCMS_SERVICE_DOMAIN: string;
+declare const MICROCMS_API_KEY: string;
 import { createClient, type MicroCMSQueries } from "microcms-js-sdk";
-import { VITE_MICROCMS_SERVICE_DOMAIN, VITE_MICROCMS_API_KEY } from "$env/static/private";
 import blogsDetail from "$lib/assets/mocks/blogs-detail.json";
 import blogsList from "$lib/assets/mocks/blogs-list.json";
 import type { EndPoints } from "$lib/types/microcms";
 
 export const microcms = createClient({
-  serviceDomain: import.meta.env.VITE_MICROCMS_SERVICE_DOMAIN,
-  apiKey: import.meta.env.MICROCMS_API_KEY,
+  serviceDomain: MICROCMS_SERVICE_DOMAIN,
+  apiKey: MICROCMS_API_KEY,
 });
 
 export async function getContentList<T extends keyof EndPoints["gets"]>(

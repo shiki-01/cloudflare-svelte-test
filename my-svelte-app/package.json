@@ -37,6 +37,7 @@
   },
   "type": "module",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "microcms-js-sdk": "^3.1.1"
   }
 }
